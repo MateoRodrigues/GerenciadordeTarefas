@@ -16,7 +16,7 @@ def main(page: ft.Page):
             ),
         ]
     )
-    page.update()
+
     
     
 
