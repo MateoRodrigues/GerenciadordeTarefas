@@ -3,10 +3,9 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = 'Gerenciador de tarefas'
-    page.vertical_alignment = ft.MainAxisAlignment.START
-    page.window_height = 600
-    page.window_width = 600
-    page.update()
+    page.window_height = 400
+    page.window_width = 400
+    page.window_resizable = False
     page.navigation_bar = ft.NavigationBar(
         destinations=[
             ft.NavigationBarDestination(icon=ft.Icons.HOME, label="Ínicio"),
@@ -29,10 +28,11 @@ def main(page: ft.Page):
         ]
     )
     page.add(ft.Text("Tarefas!"))
+    page.update()
 
 
 
     
     
 
-ft.app(target=main)
+ft.app(target=main, view=ft.AppView.FLET_APP)
