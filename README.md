@@ -1,4 +1,4 @@
-# Projetosgitpython app
+# Gerenciadordetarefas app
 
 ## Run the app
 
