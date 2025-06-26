@@ -13,11 +13,11 @@ def main(page: ft.Page):
             ),
             ft.Divider(),
             ft.NavigationDrawerDestination(
-                icon=ft.icons.HOME,
+                icon=ft.Icons.HOME,
                 label="Início"
             ),
             ft.NavigationDrawerDestination(
-                icon=ft.icons.INFO,
+                icon=ft.Icons.SETTINGS,
                 label="Sobre"
             ),
         ]
@@ -59,7 +59,7 @@ def main(page: ft.Page):
             ),
         ],
     )
-    page.appbar = ft.AppBar(title=ft.Text("Meus compromissos"), leading=ft.IconButton(ft.icons.MENU, on_click=lambda _: drawer.open()))
+    page.appbar = ft.AppBar(title=ft.Text("Meus compromissos"), leading=ft.IconButton(ft.Icons.MENU, on_click=lambda _: drawer.open()))
     page.drawer = drawer
     page.add(meu_dia)
     page.update()
