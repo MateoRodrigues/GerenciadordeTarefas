@@ -4,7 +4,8 @@ from .init import app
 def main(page: ft.Page):
     page.title = 'Feeny'
     page.window.width = 725
-    page.window.height = 735
+    page.window.height = 900
+    page.theme_mode = ft.ThemeMode.LIGHT
     drawer = ft.NavigationDrawer(
         controls=[
             ft.Container(
