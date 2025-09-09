@@ -5,7 +5,7 @@ def main(page: ft.Page):
     page.title = 'Feeny'
     page.window.width = 725
     page.window.height = 900
-    page.theme_mode = ft.ThemeMode.LIGHT
+    page.theme_mode = ft.ThemeMode.DARK
     drawer = ft.NavigationDrawer(
         controls=[
             ft.Container(
@@ -23,10 +23,11 @@ def main(page: ft.Page):
             ),
         ]
     )
-    page.navigation_bar = ft.NavigationBar(
+    page.navigation_bar = ft.CupertinoNavigationBar(
+         bgcolor=ft.Colors.GREY_400,
         destinations=[
             ft.NavigationBarDestination(icon=ft.Icons.HOME, label="Home"),
-            ft.NavigationBarDestination(icon=ft.Icons.DOORBELL_OUTLINED, label="Inbox"),
+            ft.NavigationBarDestination(icon=ft.Icons.DOORBELL_SHARP, label="Inbox"),
             ft.NavigationBarDestination(
                 icon=ft.Icons.FEATURED_PLAY_LIST,
                 selected_icon=ft.Icons.FEATURED_PLAY_LIST,

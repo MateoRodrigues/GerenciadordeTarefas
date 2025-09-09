@@ -11,5 +11,5 @@ def app():
         fase_dia = 'Evening'
     else:
         fase_dia = 'Night'
-    frase = f"{dia_da_semana}, {mes}/n Good {fase_dia}, User"
+    frase = f"{dia_da_semana}, {mes} Good {fase_dia}, User"
     return frase
