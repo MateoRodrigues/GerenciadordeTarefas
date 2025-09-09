@@ -1,3 +1,5 @@
 {
-    "Theme" : "Light"
+    "MODE" : "Light",
+    "LIGHT" : "Light",
+    "DARK": "Dark"  
 }
