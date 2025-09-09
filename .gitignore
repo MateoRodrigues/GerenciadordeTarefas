@@ -161,4 +161,4 @@ cython_debug/
 
 # Flet
 storage/
-themes/
+src/themes/
