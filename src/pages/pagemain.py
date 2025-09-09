@@ -1,5 +1,5 @@
 import flet as ft
-from .init import app
+from ..controllers.init import app
 
 def main(page: ft.Page):
     page.title = 'Feeny'
