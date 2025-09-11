@@ -2,11 +2,12 @@ import flet as ft
 from controllers.init import app
 from ..components.navigation_main import NavigationMain
 
+
 def main(page: ft.Page):
     page.title = 'Feeny'
     page.window.width = 725
     page.window.height = 900
-    page.theme_mode = ft.ThemeMode.DARK
+    page.theme_mode = ft.ThemeMode.LIGHT
 
     drawer = ft.NavigationDrawer(
         controls=[
@@ -16,12 +17,16 @@ def main(page: ft.Page):
             ),
             ft.Divider(),
             ft.NavigationDrawerDestination(
-                icon=ft.Icons.HOME,
-                label="Início"
+                icon=ft.Icons.WB_SUNNY,
+                label="My Day"
             ),
             ft.NavigationDrawerDestination(
-                icon=ft.Icons.SETTINGS,
-                label="Sobre"
+                icon=ft.Icons.CALENDAR_MONTH,
+                label="Event"
+            ),
+            ft.NavigationDrawerDestination(
+                icon=ft.Icons.TASK_ALT_OUTLINED,
+                label="Tasks"
             ),
         ]
     )
