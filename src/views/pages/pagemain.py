@@ -1,11 +1,13 @@
 import flet as ft
-from ..controllers.init import app
+from controllers.init import app
+from ..components.navigation_main import NavigationMain
 
 def main(page: ft.Page):
     page.title = 'Feeny'
     page.window.width = 725
     page.window.height = 900
     page.theme_mode = ft.ThemeMode.DARK
+
     drawer = ft.NavigationDrawer(
         controls=[
             ft.Container(
@@ -23,28 +25,13 @@ def main(page: ft.Page):
             ),
         ]
     )
-    page.navigation_bar = ft.CupertinoNavigationBar(
-         bgcolor=ft.Colors.GREY_400,
-        destinations=[
-            ft.NavigationBarDestination(icon=ft.Icons.HOME, label="Home"),
-            ft.NavigationBarDestination(icon=ft.Icons.DOORBELL_SHARP, label="Inbox"),
-            ft.NavigationBarDestination(
-                icon=ft.Icons.FEATURED_PLAY_LIST,
-                selected_icon=ft.Icons.FEATURED_PLAY_LIST,
-                label="Projects",
-            ),
-            ft.NavigationBarDestination(
-                icon=ft.Icons.SETTINGS,
-                selected_icon=ft.Icons.SETTINGS,
-                label="Settings",
-            ),
-            ft.NavigationBarDestination(
-                icon=ft.Icons.PERSON,
-                selected_icon=ft.Icons.PERSON,
-                label="Account",
-            ),
-        ]
-    )
+
+    def enddrawer(e):
+        e.control.page.drawer = drawer
+        drawer.open = True
+        e.control.page.update()
+
+    page.navigation_bar = NavigationMain()
     meu_dia = ft.Text(
         spans=[
             ft.TextSpan(
@@ -61,7 +48,9 @@ def main(page: ft.Page):
             ),
         ],
     )
-    page.appbar = ft.AppBar(title=ft.Text("Meus compromissos"), leading=ft.IconButton(ft.Icons.MENU, on_click=lambda _: drawer.open()))
+    page.appbar = ft.AppBar(title=ft.Text("Meus compromissos"), leading=ft.IconButton(ft.Icons.MENU,on_click= enddrawer))
+
+
     page.drawer = drawer
     page.add(meu_dia)
     page.update()
