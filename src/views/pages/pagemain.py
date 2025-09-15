@@ -53,7 +53,7 @@ def main(page: ft.Page):
             ),
         ],
     )
-    page.appbar = ft.AppBar(title=ft.Text("Meus compromissos"), leading=ft.IconButton(ft.Icons.MENU,on_click= enddrawer))
+    page.appbar = ft.AppBar( leading=ft.IconButton(ft.Icons.MENU,on_click= enddrawer))
 
 
     page.drawer = drawer
