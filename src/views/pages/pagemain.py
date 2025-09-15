@@ -1,6 +1,8 @@
 import flet as ft
 from controllers.init import app
 from ..components.navigation_main import NavigationMain
+from ..components.appbarhome import AppBarHome
+from ..components.tasks_view import TaskView
 
 
 def main(page: ft.Page):
@@ -53,9 +55,11 @@ def main(page: ft.Page):
             ),
         ],
     )
-    page.appbar = ft.AppBar( leading=ft.IconButton(ft.Icons.MENU,on_click= enddrawer))
+    page.appbar = AppBarHome(drawer=enddrawer)
+    #page.appbar = ft.AppBar( leading=ft.IconButton(ft.Icons.MENU,on_click= enddrawer))
 
 
     page.drawer = drawer
     page.add(meu_dia)
+    page.add(TaskView("Estudar Flet", None, None))
     page.update()
