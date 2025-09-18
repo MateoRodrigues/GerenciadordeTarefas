@@ -56,7 +56,7 @@ def main(page: ft.Page):
         ],
     )
     page.appbar = AppBarHome(drawer=enddrawer)
-    #page.appbar = ft.AppBar( leading=ft.IconButton(ft.Icons.MENU,on_click= enddrawer))
+    
 
 
     page.drawer = drawer
