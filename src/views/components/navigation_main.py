@@ -5,8 +5,10 @@ class NavigationMain(ft.NavigationBar):
         super().__init__(
             bgcolor=ft.Colors.LIGHT_BLUE_500,
             indicator_color=ft.Colors.LIGHT_BLUE_300,
-            destinations=[
+            destinations=[ 
+            # Ícones da barra de navegação
             ft.NavigationBarDestination(icon=ft.Icons.HOME, label="Home"),
+
             ft.NavigationBarDestination(icon=ft.Icons.DOORBELL_SHARP, label="Inbox"),
             ft.NavigationBarDestination(
                 icon=ft.Icons.FEATURED_PLAY_LIST,
