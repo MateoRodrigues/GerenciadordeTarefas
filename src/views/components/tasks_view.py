@@ -1,5 +1,6 @@
 import flet as ft
 
+# Classe que representa UMA tarefa individual (Task)
 class TaskView(ft.Column):
     def __init__(self, task_name, task_status_change, task_delete):
         super().__init__()
@@ -7,7 +8,7 @@ class TaskView(ft.Column):
         self.task_name = task_name
         self.task_status_change = task_status_change
         self.task_delete = task_delete
-
+        # Checkbox que representa a tarefa (se marcada = concluída)
         self.display_task = ft.Checkbox(
             value=False, label=self.task_name, on_change=self.status_changed
         )
