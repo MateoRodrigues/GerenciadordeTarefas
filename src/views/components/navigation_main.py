@@ -1,5 +1,8 @@
 import flet as ft
 
+
+
+
 class NavigationMain(ft.NavigationBar):
     def __init__(self, on_change=None):
         super().__init__(
@@ -7,7 +10,7 @@ class NavigationMain(ft.NavigationBar):
             indicator_color=ft.Colors.LIGHT_BLUE_300,
             destinations=[ 
             # Ícones da barra de navegação
-            ft.NavigationBarDestination(icon=ft.Icons.HOME, label="Home"),
+            ft.NavigationBarDestination(icon=ft.Icons.HOME, label="Home",),
 
             ft.NavigationBarDestination(icon=ft.Icons.DOORBELL_SHARP, label="Inbox"),
             ft.NavigationBarDestination(
