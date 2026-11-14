@@ -2,15 +2,18 @@ import flet as ft
 from controllers.init import app
 from ..components.navigation_main import NavigationMain
 from ..components.appbarhome import AppBarHome
-from ..components.tasks_view import TaskView
+from ..components.list_view import ListView
 
 
 def main(page: ft.Page):
+    # configurações da página
     page.title = 'Feeny'
     page.window.width = 725
     page.window.height = 900
     page.theme_mode = ft.ThemeMode.LIGHT
 
+
+    #Menu lateral
     drawer = ft.NavigationDrawer(
         controls=[
             ft.Container(
@@ -39,6 +42,7 @@ def main(page: ft.Page):
         e.control.page.update()
 
     page.navigation_bar = NavigationMain()
+    # Texto com efeito de gradiente
     meu_dia = ft.Text(
         spans=[
             ft.TextSpan(
@@ -56,10 +60,10 @@ def main(page: ft.Page):
         ],
     )
     page.appbar = AppBarHome(drawer=enddrawer)
-    #page.appbar = ft.AppBar( leading=ft.IconButton(ft.Icons.MENU,on_click= enddrawer))
+    
 
 
     page.drawer = drawer
     page.add(meu_dia)
-    page.add(TaskView("Estudar Flet", None, None))
+    page.add(ListView())
     page.update()
