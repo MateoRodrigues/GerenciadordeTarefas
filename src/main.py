@@ -1,13 +1,18 @@
-#import flet as ft
-#from views.pages.pagemain import main
-import json
-from repository.filejson import FileJson
-from pathlib import Path
-fljson = FileJson()
-data = fljson.read()
-for item in data:
-    for key,value in item.items():
-        print(f'{key}: {value}')
-    print('-'*30)
+import flet as ft
 
-#ft.app(target=main)
+
+def main(page: ft.Page):
+    page.appbar = ft.AppBar(
+    leading=ft.Icon(ft.Icons.MENU),
+    title=ft.Text("Dashboard"),
+    bgcolor=ft.Colors.SURFACE_CONTAINER,
+    actions=[
+        ft.IconButton(ft.Icons.SEARCH),
+        ft.IconButton(ft.Icons.MORE_VERT),
+    ],
+)
+    page.add(ft.SafeArea(content=ft.Column(controls=[ft.Text("Body!")])))
+
+
+if __name__ == "__main__":
+    ft.run(main)
